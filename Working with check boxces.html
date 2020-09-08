@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Working with checkboxes</title>
+        <SCRIPT>
+            function calculate(form, callingField) {
+                if (callingField=="result") {
+                    if(from.square.checked) {
+                        form.entry.value=Math.sqrt(form.result.value);
+                    }
+                    else { form.entry.value=form.result.value/2; }
+                } 
+                else {
+                    if(form.square.checked) {
+                        form.result.value=form.entry.value*form.entry.value;
+                    }
+                    else {form.result.value=form.entry.value*2; }
+                }
+            }
+        </SCRIPT>
+    </head>
+    <body>
+        <form>
+            <center>
+                <br>
+                <b>Value:</b>
+                <input Name="entry" onchange="culculate(this.form,this.name);" type="text"value=0>
+                <br><br>
+                <b>Action</b>(default-double):
+                <input Name="square" onClick="calculate(this.form,this.name);" type="checkbox">square
+                <br><br>
+                <b>Result</b>
+                <input onchange="calculate(this.form,this.name);" Name="result" type="text" value=0>
+            </center>
+        </form>
+    </body>
+</html>
