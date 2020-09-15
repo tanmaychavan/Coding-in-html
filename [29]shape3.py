@@ -1,0 +1,17 @@
+import turtle
+a=turtle.Pen()
+a.shape("turtle")
+a.width("5")
+a.color("red","blue")
+a.begin_fill()
+a.forward(100)
+a.left(90)
+a.forward(100)
+a.left(135)
+a.forward(138)
+a.right(135)
+a.forward(100)
+a.right(90)
+a.forward(100)
+a.end_fill()
+
