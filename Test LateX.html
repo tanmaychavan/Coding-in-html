@@ -1,0 +1,56 @@
+<html>
+	<head>
+		<style>
+			input {
+				width: 95%;
+			}
+		</style>
+	<body>
+		<label for="input">Latex equation: </label>
+		<!-- <input type="text" name="input"> -->
+		<br><textarea rows="10" cols="50" name="input"></textarea>
+		<br><br>
+
+		<button onClick="toGithubRenderURL()">Encode to github render URL</button>
+		<br><br>
+
+		<label for="output">The URL is: </label>
+		<input type="url" name="output">
+		<br><br>
+
+		<label for="result">The result is: </label>
+		<p id="result"></p>
+		
+		<br/><br/>
+		Source: https://jsfiddle.net/8ndx694g/
+		<hr/><br/>
+		## collapsible markdown?
+
+		<details><summary>CLICK ME</summary>
+		<p>
+
+		#### yes, even hidden code blocks!
+
+		```python
+		print("hello world!")
+		```
+
+		</p>
+		</details>
+		
+		- <img src="https://latex.codecogs.com/gif.latex?O_t=\text { Onset event at time bin } t " /> <br/>
+		- <img src="https://latex.codecogs.com/gif.latex?s=\text { sensor reading }  " />  <br/>
+		- <img src="https://latex.codecogs.com/gif.latex?P(s | O_t )=\text { Probability of a sensor reading value when sleep onset is observed at a time bin } t " /> <br/>
+		
+		$`\sqrt{2}`$
+		
+		<script>
+			function toGithubRenderURL() {
+				var input = document.getElementsByName('input')[0].value;
+				var output = '<img src="https://render.githubusercontent.com/render/math?math=' + encodeURIComponent(input) + '">';
+				document.getElementsByName('output')[0].value = output;
+				document.getElementById('result').innerHTML = output;
+			}
+		</script>
+	</body>	
+</html>
